@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../components/Main";
 import Blog from "../../Pages/Blog/Blog";
-import Courses from "../../Pages/Courses/Courses";
+import CourseDetails from "../../Pages/Courses/CourseDetails/CourseDetails";
+import Courses from "../../Pages/Courses/Courses/Courses";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import FAQ from "../../Pages/FAQ/FAQ";
 import Login from "../../Pages/Form/Login/Login";
@@ -38,6 +39,13 @@ export const routes = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register></Register>
+            },
+            {
+                path:'/course/:courseId',
+                loader: async({params}) =>{
+                    return fetch(`https://ilm-center-server.vercel.app/course/${params.courseId}`)
+                },
+                element: <CourseDetails></CourseDetails>
             }
         ]
     }
