@@ -9,6 +9,7 @@ import FAQ from "../../Pages/FAQ/FAQ";
 import Login from "../../Pages/Form/Login/Login";
 import Register from "../../Pages/Form/Register/Register";
 import Home from "../../Pages/Home/Home";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 export const routes = createBrowserRouter([
     {
@@ -53,7 +54,7 @@ export const routes = createBrowserRouter([
                 loader: async({params}) =>{
                     return fetch(`https://ilm-center-server.vercel.app/checkout/${params.checkoutId}`)
                 },
-                element: <CheckOut></CheckOut>
+                element: <PrivateRoutes><CheckOut></CheckOut></PrivateRoutes>
             }
         ]
     }

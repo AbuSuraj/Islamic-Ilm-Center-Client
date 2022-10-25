@@ -11,7 +11,7 @@ const AuthProvider = ({children}) =>{
     const gitHubProvider = new GithubAuthProvider()
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
-  
+   console.log(user);
     //1. Create User
     const createUser = (email, password) => {
       setLoading(true)
@@ -67,7 +67,7 @@ const AuthProvider = ({children}) =>{
     useEffect(() => {
       //this part will execute once the component is mounted.
       const unsubscribe = onAuthStateChanged(auth, currentUser => {
-        if(currentUser === null || currentUser.emailVerified){
+        if(user === null || currentUser.emailVerified){
             setUser(currentUser);}
         setLoading(false)
       })
