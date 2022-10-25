@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../components/Main";
 import Blog from "../../Pages/Blog/Blog";
+import CheckOut from "../../Pages/Courses/CheckOut/CheckOut";
 import CourseDetails from "../../Pages/Courses/CourseDetails/CourseDetails";
 import Courses from "../../Pages/Courses/Courses/Courses";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
@@ -46,6 +47,13 @@ export const routes = createBrowserRouter([
                     return fetch(`https://ilm-center-server.vercel.app/course/${params.courseId}`)
                 },
                 element: <CourseDetails></CourseDetails>
+            },
+            {
+                path:'/checkout/:checkoutId',
+                loader: async({params}) =>{
+                    return fetch(`https://ilm-center-server.vercel.app/checkout/${params.checkoutId}`)
+                },
+                element: <CheckOut></CheckOut>
             }
         ]
     }
