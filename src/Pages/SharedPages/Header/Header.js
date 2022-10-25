@@ -1,10 +1,21 @@
 import React from 'react';
+import { useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logout } = useContext(AuthContext);
+  const [navbar, setNavbar] = useState(false)
+  const handleLogOut = () => {
+    logout()
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+      });
+  };
     return (
-        <div>
-            <div className="bg-gray-100 font-sans w-full min-h-screen m-0">
+        <div className="bg-gray-100 font-sans w-full m-0">
       <div className="bg-gray-900 text-sky-500 shadow">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-4">
@@ -34,24 +45,21 @@ const Header = () => {
             </ul>
     
             <ul className="hidden sm:flex sm:items-center list-none">
-            {/* {user?.uid ? ( */}
+            {user?.uid ? (
               <>
-                {/* <li>
+                <li>
                   <Link to={"/profile"} className="hover:text-gray-200">
                     {user?.displayName}
                   </Link>
-                </li> */}
+                </li>
 
                 <li>
-                  <Link className="text-sm font-semibold mr-4 hover:text-gray-200" 
-                //   onClick={handleLogOut}
-                  >
+                  <Link className="text-sm font-semibold mr-4 hover:text-gray-200" onClick={handleLogOut}>
                     Logout
                   </Link>
                 </li>
               </>
-            {/* ) :  */}
-            (
+            ) : (
               <>
                 <li>
                   {" "}
@@ -65,8 +73,7 @@ const Header = () => {
                   </Link>
                 </li>
               </>
-            )
-            {/* } */}
+            )}
             
             </ul>
     
@@ -104,7 +111,6 @@ const Header = () => {
         </div>
       </div>
     </div>
-        </div>
     );
 };
 
