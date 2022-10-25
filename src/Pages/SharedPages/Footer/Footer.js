@@ -65,7 +65,7 @@ const Footer = () => {
                   <li>
                     <a
                        className="text-blue-500 hover:text-white font-semibold block pb-2 text-sm"
-                      href="https://www.github.com/creativetimofficial?ref=njs-profile"
+                      href="https://github.com/AbuSuraj"
                     >
                       Github
                     </a>
