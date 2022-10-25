@@ -1,15 +1,15 @@
 import { createContext, useState } from "react";
-import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth'
+import {createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth'
 import app from "../../firebase/firebase.init";
 import { useEffect } from "react";
 
-const auth = getAuth(app)
 export const AuthContext = createContext();
+const auth = getAuth(app);
 
 const AuthProvider = ({children}) =>{
     const googleProvider = new GoogleAuthProvider()
-  
-    const [user, setUser] = useState({})
+    const gitHubProvider = new GithubAuthProvider()
+    const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
   
     //1. Create User
@@ -27,8 +27,11 @@ const AuthProvider = ({children}) =>{
   
     //   3. Email Verify
     const verifyEmail = () => {
-      setLoading(true)
+    //   setLoading(true)
       return sendEmailVerification(auth.currentUser)
+    }
+    const updateUserProfile = (profile) =>{
+        return updateProfile(auth.currentUser, profile)
     }
   
     // 4. Google Signin
@@ -36,6 +39,11 @@ const AuthProvider = ({children}) =>{
     const signInWithGoogle = () => {
       setLoading(true)
       return signInWithPopup(auth, googleProvider)
+    }
+     //github signin
+    const signInWithGithub = () =>{
+        setLoading(true);
+        return signInWithPopup(auth,gitHubProvider)
     }
   
     // 5. Logout
@@ -59,7 +67,8 @@ const AuthProvider = ({children}) =>{
     useEffect(() => {
       //this part will execute once the component is mounted.
       const unsubscribe = onAuthStateChanged(auth, currentUser => {
-        setUser(currentUser)
+        if(currentUser === null || currentUser.emailVerified){
+            setUser(currentUser);}
         setLoading(false)
       })
   
@@ -79,7 +88,9 @@ const AuthProvider = ({children}) =>{
       signin,
       resetPassword,
       loading,
-      setLoading
+      setLoading,
+      signInWithGithub,
+      updateUserProfile
     }
   
     return (
