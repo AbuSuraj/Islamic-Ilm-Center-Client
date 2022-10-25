@@ -34,14 +34,14 @@ const Header = () => {
               <li  className="text-sm font-semibold  mr-4"><Link className="hover:text-gray-200" to={"/home"}>
                 Home
               </Link></li>
-              <li   className=" text-sm font-semibold mr-4"><Link className="hover:text-gray-200" to={"/category"}>
-                Catagory
+              <li   className=" text-sm font-semibold mr-4"><Link className="hover:text-gray-200" to={"/courses"}>
+                Courses
               </Link></li>
-              <li  className="text-sm font-semibold mr-4"><Link className="hover:text-gray-200" to={"/collection"}>
-                Collections
+              <li  className="text-sm font-semibold mr-4"><Link className="hover:text-gray-200" to={"/faq"}>
+                FAQ
               </Link></li>
-              <li h className="text-sm font-semibold hover:text-purple-600"><Link className="hover:text-gray-200" to={"/contact us"}>
-                Contact Us
+              <li h className="text-sm font-semibold hover:text-purple-600"><Link className="hover:text-gray-200" to={"/blog"}>
+                Blog
               </Link></li>
             </ul>
     
@@ -90,14 +90,14 @@ const Header = () => {
               <li  className="text-sm font-semibold mb-1"><Link className="hover:text-gray-200" to={"/home"}>
                 Home
               </Link></li>
-              <li className="text-sm font-semibold  mb-1"><Link className="hover:text-gray-200" to={"/categories"}>
-                Categories
+              <li className="text-sm font-semibold  mb-1"><Link className="hover:text-gray-200" to={"/courses"}>
+                Courses
               </Link></li>
-              <li className=" text-sm font-semibold   mb-1"><Link className="hover:text-gray-200" to={"/collection"}>
-                Collections
+              <li className=" text-sm font-semibold   mb-1"><Link className="hover:text-gray-200" to={"/faq"}>
+                FAQ
               </Link></li>
-              <li className="text-sm font-semibold  mb-1"><Link className="hover:text-gray-200" to={"/contact"}>
-                contact us
+              <li className="text-sm font-semibold  mb-1"><Link className="hover:text-gray-200" to={"/blog"}>
+                Blog
               </Link></li>
               <ul className="list-none flex justify-between items-center border-t-2 pt-2">
                 <li><Link className="text-sm font-semibold mr-4 hover:text-gray-200" to={"/login"}>
