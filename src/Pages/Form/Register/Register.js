@@ -7,7 +7,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [error, setError] = useState("");
-    const [accepted, setAccepted] = useState(false);
+    // const [accepted, setAccepted] = useState(false);
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
@@ -31,7 +31,7 @@ const Register = () => {
             form.reset();
             handleUpdateUserProfile(name, photoURL);
             handleEmailVerification();
-            toast.success("Please verify your email address before login!");
+            
           })
           .catch((error) => {
             console.error(error);
@@ -51,8 +51,11 @@ const Register = () => {
      
     
       const handleEmailVerification = () => {
+        console.log("verified")
         verifyEmail()
-          .then(() => {})
+          .then(() => {
+            toast.success("Please verify your email address before login!");
+          })
           .catch((error) => console.error(error));
       };
 

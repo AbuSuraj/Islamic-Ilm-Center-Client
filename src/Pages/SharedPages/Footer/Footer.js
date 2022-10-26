@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {  BsFacebook, FaDribbble, FaFacebook, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 const Footer = () => {
     return (
         <footer  className="relative bg-gray-900 pt-8 pb-6 mt-5">
@@ -14,28 +14,33 @@ const Footer = () => {
             </h5>
             <div  className="mt-6 lg:mb-0 mb-6">
               <button
-                 className="bg-white text-lightBlue-400 shadow-lg font-normal h-6 w-6 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                 className="bg-white text-xl text-sky-400 shadow-lg font-normal   items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
-                <i  className="fab fa-twitter"></i>
+                <FaTwitter></FaTwitter>
+                {/* <i  className="fab fa-twitter"></i> */}
               </button>
               <button
-                 className="bg-white text-lightBlue-600 shadow-lg font-normal h-6 w-6 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                 className="bg-white text-blue-600 text-xl shadow-lg font-normal   items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
-                <i  className="fab fa-facebook-square"></i>
+                {/* <i  className="fab fa-facebook-square"></i> */}
+                {/* <BsFacebook></BsFacebook> */}
+                <FaFacebook></FaFacebook>
               </button>
               <button
-                 className="bg-white text-pink-400 shadow-lg font-normal h-6 w-6 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                 className="bg-white text-pink-400 text-xl shadow-lg font-normal  items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
-                <i  className="fab fa-dribbble"></i>
+                <FaDribbble></FaDribbble>
+                {/* <i  className="fab fa-dribbble"></i> */}
               </button>
               <button
-                 className="bg-white text-blueGray-800 shadow-lg font-normal h-6 w-6 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                 className="bg-white text-green-700 text-xl shadow-lg font-normal   items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                 type="button"
               >
-                <i  className="fab fa-github"></i>
+                <FaWhatsapp></FaWhatsapp>
+                {/* <i  className="fab fa-github"></i> */}
               </button>
             </div>
           </div>
@@ -49,33 +54,33 @@ const Footer = () => {
                   <li>
                     <a
                        className="text-blue-500 hover:text-white font-semibold block pb-2 text-sm"
-                      href="https://www.creative-tim.com/presentation?ref=njs-profile"
+                      href="https://www.islamicfinder.org/world/bangladesh/1185099/sylhet-prayer-times/"
                     >
-                      About Us
+                      Prayer Times
                     </a>
                   </li>
                   <li>
                     <a
                        className="text-blue-500 hover:text-white font-semibold block pb-2 text-sm"
-                      href="https://blog.creative-tim.com?ref=njs-profile"
+                      href="https://www.youtube.com/watch?v=1SMlUs9Wijs"
                     >
-                      Blog
+                      Free Calliography
                     </a>
                   </li>
                   <li>
                     <a
                        className="text-blue-500 hover:text-white font-semibold block pb-2 text-sm"
-                      href="https://github.com/AbuSuraj"
+                      href="https://www.youtube.com/c/LearnTajweed"
                     >
-                      Github
+                      Free tazweed course
                     </a>
                   </li>
                   <li>
                     <a
                        className="text-blue-500 hover:text-white font-semibold block pb-2 text-sm"
-                      href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile"
+                      href="https://islamqa.info/en"
                     >
-                      Free Products
+                      Islamic Q & A
                     </a>
                   </li>
                 </ul>
@@ -88,33 +93,33 @@ const Footer = () => {
                   <li>
                     <a
                        className="text-blue-500 hover:text-white font-semibold block pb-2 text-sm"
-                      href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile"
+                      href="https://www.kutuby.com/?gclid=Cj0KCQjwteOaBhDuARIsADBqReiWDllixtvnz3SiBjOrQZAE5oVC8bHCT0_PuoIr8dTotHOoBccfeAAaAupQEALw_wcB"
                     >
-                      MIT License
+                      Kids Quran Learning
                     </a>
                   </li>
                   <li>
                     <a
                        className="text-blue-500 hover:text-white font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/terms?ref=njs-profile"
+                      href="https://www.thebritishacademy.ac.uk/blog/what-is-islamic-studies/?gclid=Cj0KCQjwteOaBhDuARIsADBqReijcTkazuKLA5LPHpkbejjnjJuHpIJrkWhgo4am6rOWTWwZrciHyeAaArOzEALw_wcB"
                     >
-                      Terms & Conditions
+                      Islamic Blog
                     </a>
                   </li>
                   <li>
                     <a
                        className="text-blue-500 hover:text-white font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/privacy?ref=njs-profile"
+                      href="https://www.nwdawah.org/?utm_source=google&utm_medium=cpc"
                     >
-                      Privacy Policy
+                      Explore Quran
                     </a>
                   </li>
                   <li>
                     <a
                        className="text-blue-500 hover:text-white font-semibold block pb-2 text-sm"
-                      href="https://creative-tim.com/contact-us?ref=njs-profile"
+                      href="https://www.islamicbooksforfree.com/"
                     >
-                      Contact Us
+                      Books store
                     </a>
                   </li>
                 </ul>
@@ -128,7 +133,7 @@ const Footer = () => {
             <div  className="text-sm text-blue-500 font-semibold py-1">
               Copyright © <span id="get-current-year">2022</span>
               <a
-                href="https://www.creative-tim.com/product/notus-js"
+                href="https://www.facebook.com/AbuSuraj112"
                  className="text-blueGray-500 hover:text-white"
                 target="_blank"
               >
@@ -140,8 +145,7 @@ const Footer = () => {
                 >
                   {" "}
                   Abu Bokor Suraj
-                </a>{" "}
-              </a>
+                </a>{" "}              </a>
             </div>
           </div>
         </div>

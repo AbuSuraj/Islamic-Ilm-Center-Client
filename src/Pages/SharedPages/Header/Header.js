@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
-
+import { FaUser } from 'react-icons/fa';
+import { Tooltip } from '@mui/material';
+ 
 const Header = () => {
     const { user, logout } = useContext(AuthContext);
   const [navbar, setNavbar] = useState(false)
@@ -45,7 +47,7 @@ const Header = () => {
               </Link></li>
             </ul>
     
-            <ul className="hidden sm:flex sm:items-center list-none">
+            <ul className="hidden sm:flex sm:items-center justify-between list-none">
             {user?.uid ? (
               <>
                 <li>
@@ -53,7 +55,22 @@ const Header = () => {
                     {user?.displayName}
                   </Link>
                 </li>
-
+                <li>
+                <Link to="/profile">
+               {
+                user?.photoURL ?
+                <Tooltip title={user?.displayName} arrow>
+                <img place="top" type="dark" effect="float" data-tip="suraj" className='rounded-full mr-4' style={{height:'40px'}}
+                  alt=''
+                src={user?.photoURL}>   
+                
+                </img>
+                </Tooltip>
+                :
+                <FaUser></FaUser>
+               }
+            </Link>
+                </li>
                 <li>
                   <Link className="text-sm font-semibold mr-4 hover:text-gray-200" onClick={handleLogOut}>
                     Logout
@@ -99,14 +116,61 @@ const Header = () => {
               <li className="text-sm font-semibold  mb-1"><Link className="hover:text-gray-200" to={"/blog"}>
                 Blog
               </Link></li>
+
+              {/* <ul className="hidden sm:flex sm:items-center list-none"> */}
               <ul className="list-none flex justify-between items-center border-t-2 pt-2">
+            {user?.uid ? (
+              <>
+                <li>
+                  <Link to={"/profile"} className="hover:text-gray-200 mr-4">
+                    {user?.displayName}
+                  </Link>
+                </li>
+                <li>
+                <Link to="/profile">
+               {
+                user?.photoURL ?
+                <img className='rounded-full' style={{height:'40px'}}
+                  alt=''
+                src={user?.photoURL}>               
+                </img>
+                :
+                <FaUser></FaUser>
+               }
+            </Link>
+                </li>
+
+                <li>
+                  <Link className="text-sm font-semibold mr-4 hover:text-gray-200" onClick={handleLogOut}>
+                    Logout
+                  </Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  {" "}
+                  <Link className="text-sm font-semibold mr-4 hover:text-gray-200" to={"/login"}>
+                    Login
+                  </Link>{" "}
+                </li>
+                <li>
+                  <Link className="text-sm font-semibold mr-4 hover:text-gray-200" to={"/register"}>
+                    register
+                  </Link>
+                </li>
+              </>
+            )}
+            
+            </ul>
+              {/* <ul className="list-none flex justify-between items-center border-t-2 pt-2">
                 <li><Link className="text-sm font-semibold mr-4 hover:text-gray-200" to={"/login"}>
                     Login
                   </Link></li>
                 <li><Link className="text-sm font-semibold mr-4 hover:text-gray-200" to={"/registration"}>
                     registration
                   </Link></li>
-              </ul>
+              </ul> */}
             </ul>
           </div>
         </div>

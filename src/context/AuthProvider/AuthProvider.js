@@ -27,7 +27,7 @@ const AuthProvider = ({children}) =>{
   
     //   3. Email Verify
     const verifyEmail = () => {
-    //   setLoading(true)
+      setLoading(true)
       return sendEmailVerification(auth.currentUser)
     }
     const updateUserProfile = (profile) =>{
