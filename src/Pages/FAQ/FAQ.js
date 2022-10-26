@@ -1,47 +1,47 @@
 import React from 'react';
+import { useState } from 'react';
 
+import { BsFillArrowDownCircleFill, BsFillArrowUpCircleFill } from 'react-icons/bs'
+import AccordionLayout from './AccordionLayout/AccordionLayout';
 const FAQ = () => {
-    return (
-        <div className="flex items-center justify-center h-screen">
-            <div className="bg-white">
-                <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-                    <h2 className="text-2xl font-semibold">
-                        Frequently Asked Questions
-                    </h2>
-                    <p className="mt-4 mb-8 text-gray-600">
-                        React Interview Questions And Answers
-                    </p>
-                    <div className="space-y-4">
-                        <details className="w-full rounded-lg ring-1 ring-purple-600">
-                            <summary className="px-4 py-6">
-                                What is React? 
-                            </summary>
-                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                                React is a front-end JavaScript library
-                                developed by Facebook in 2011. 
-                            </p>
-                        </details>
-                        <details className="w-full rounded-lg ring-1 ring-purple-600">
-                            <summary className="px-4 py-6">
-                            What is Props and how to use it give some example?
-                            </summary>
-                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                            Props is the shorthand for Properties in React.
-                            </p>
-                        </details>
-                        <details className="w-full rounded-lg ring-1 ring-purple-600">
-                            <summary className="px-4 py-6">
-                            How to install tailwind css in react js ?
-                            </summary>
-                            <p className="px-4 py-6 pt-0 ml-4 -mt-4 text-gray-600">
-                            What are synthetic events in React?
-                            </p>
-                        </details>
-                    </div>
-                </div>
-            </div>
+    const [activeIndex, setActiveIndex] = useState(2);
+        return (
+            <div className='flex flex-col justify-center items-center'>
+            <AccordionLayout 
+              title="Who can attend programs and activities?"
+              index={1}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+            >
+              Anyone is welcome to attend ICSC programs and activities, including Friday prayers, Sunday lectures and classes. Unless programs require registration, they are usually free, open to general attendance, and visitors are welcome to check them out. Please ask a program coordinator regarding the particular program you’re interested in. Read more about our programs.   
+            </AccordionLayout>
+  
+            <AccordionLayout 
+              title="Is there a dress code at the Center?"
+              index={2}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+            >
+              No matter what your personal style is, we want you to feel comfortable at the Islamic Center. We do not have a specific dress code. We ask visitors to respect this as a place of worship and dress modestly. Women are not required to cover their hair to enter or participate in our Center, but we do request headscarves be worn in the prayer hall and during prayer out of reverence for our tradition. We have a small number of scarves available for guests at the front of the women’s prayer section.   
+            </AccordionLayout>
+            <AccordionLayout 
+              title="Are young children welcome during prayer services or lectures?"
+              index={3}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+            >
+              We love babies and children at the Islamic Center! We also love having a safe and comfortable worship space for all of our visitors. There are several kid-friendly areas at the Center, so there is no need to miss a program or service if your child gets fussy. Some of our programs, such as Friday prayer service, often feature live audio streaming making it easy to listen from the comfort of your home when you can’t make it in person. During Ramadan, fundraisers and other special events, we typically provide free childcare. When in doubt, please give us a call to find out at 213.382.9200.    
+            </AccordionLayout>
+            <AccordionLayout 
+              title="Are there youth activities?"
+              index={4}
+              activeIndex={activeIndex}
+              setActiveIndex={setActiveIndex}
+            >
+             Yes, there are various youth programs geared toward different age brackets and interests. They include Sunday School (K-6th grades), Junior Youth Group (6-8th grades), and Youth Group (high school and college aged). Please check out the different programs to see which one is right for you.   
+            </AccordionLayout>
         </div>
-    );
-};
-
+          );
+        };
+    
 export default FAQ;

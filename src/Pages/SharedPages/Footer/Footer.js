@@ -133,7 +133,7 @@ const Footer = () => {
                 target="_blank"
               >
                 {" "}
-                A by
+                 by
                 <a
                   href="https://github.com/AbuSuraj"
                    className="text-blueGray-500 hover:text-white"
