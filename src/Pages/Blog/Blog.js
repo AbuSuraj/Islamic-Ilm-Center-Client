@@ -15,7 +15,7 @@ const Blog = () => {
         className="ml-20 mr-4 border border-2 rounded-3xl p-4  shadow-2xl my-8 "
       >
         <h1 className="text-2xl font-bold">Q.1 what is cors?</h1>
-        <div className="flex my-2">
+        <div className="block md:flex my-2">
           <p className="font-bold mx-2">Answer: </p>
           <p className="font-medium text-lg">
             Cross-Origin Resource Sharing (CORS) is an HTTP-header based
@@ -50,7 +50,7 @@ const Blog = () => {
           Q.2 Why are you using firebase? What other options do you have to
           implement authentication?
         </h1>
-        <div className="flex my-2">
+        <div className="block md:flex my-2">
           <p className="font-bold mx-2">Answer: </p>
           <p className="font-medium text-lg">
             The Firebase Realtime Database is a cloud-hosted database. Data is
@@ -62,7 +62,7 @@ const Blog = () => {
             <br />
             <br />
             Besides this it has following benefits:
-            <ul className="list-disc md:ml-8">
+            <ul className="list-disc ml-4 md:ml-8">
               <li>Google Analytics For Firebase</li>
               <li>Realtime Database & Firestore</li>
               <li>Authentication</li>
@@ -71,7 +71,7 @@ const Blog = () => {
             </ul>
             <br />
             Alternatives of Firebase
-            <ul className="list-disc md:ml-8">
+            <ul className="list-disc ml-4 md:ml-8">
               <li>MongoDB.</li>
               <li>Oracle Database.</li>
               <li>Amazon Redshift.</li>
@@ -91,7 +91,7 @@ const Blog = () => {
         <h1 className="text-2xl font-bold">
           Q.3. How does the private route work?
         </h1>
-        <div className="flex my-2">
+        <div className="block md:flex my-2">
           <p className="font-bold text-lg mx-2">Answer: </p>
           <p className="font-medium text-lg">
             The react private route component renders child components
@@ -118,7 +118,7 @@ const Blog = () => {
         <h1 className="text-2xl font-bold">
           Q. 4 What is Node? How does Node work?
         </h1>
-        <div className="flex my-2">
+        <div className="block md:flex my-2">
           <p className="font-bold text-lg mx-2">Answer: </p>
           <p className="font-medium text-lg">
             <span className="font-bold">Node.js</span> is an open-source, cross-platform, back-end JavaScript

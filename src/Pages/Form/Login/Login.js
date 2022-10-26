@@ -25,16 +25,16 @@ const Login = () => {
       signin(email, password)
         .then((result) => {
             const user = result.user;
-          toast.success("Login Success!");
-          form.reset();
-          setError("");
-          if(user.emailVerified){
+            form.reset();
+            setError("");
+            if(user.emailVerified){
+            toast.success("Login Success!");
             navigate(from,{replace:true});
            }
            else{
             toast.error("Please Verify your email")
            }
-          console.log("logged in", result.user);
+          // console.log("logged in", result.user);
         })
         .catch((error) => {
           toast.error(error.message);

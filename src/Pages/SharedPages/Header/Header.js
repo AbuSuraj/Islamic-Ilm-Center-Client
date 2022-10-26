@@ -164,7 +164,9 @@ const Header = () => {
                 </li>
               </>
             )}
-            
+            <li onClick={handleTheme}>
+                  <Link className="text-sm font-semibold mr-4 hover:text-gray-200">{theme ? 'light-theme' : 'dark-theme'} </Link>
+                </li>
             </ul>
               {/* <ul className="list-none flex justify-between items-center border-t-2 pt-2">
                 <li><Link className="text-sm font-semibold mr-4 hover:text-gray-200" to={"/login"}>

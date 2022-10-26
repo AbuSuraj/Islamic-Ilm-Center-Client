@@ -9,6 +9,7 @@ import FAQ from "../../Pages/FAQ/FAQ";
 import Login from "../../Pages/Form/Login/Login";
 import Register from "../../Pages/Form/Register/Register";
 import Home from "../../Pages/Home/Home";
+import Profile from "../../Pages/Profile/Profile";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 export const routes = createBrowserRouter([
@@ -45,6 +46,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register></Register>
+            },
+            {
+                path:'/profile',
+                element:<Profile></Profile>
             },
             {
                 path:'/course/:courseId',

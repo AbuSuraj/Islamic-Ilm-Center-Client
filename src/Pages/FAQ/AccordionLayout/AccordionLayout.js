@@ -7,7 +7,7 @@ const AccordionLayout = ({ title, children, index, activeIndex, setActiveIndex }
 
   return (
     <>
-        <div onClick={() => handleSetIndex(index)} className='flex w-1/2 justify-between p-2 mt-5 rounded bg-blue-400'>
+        <div onClick={() => handleSetIndex(index)} className='flex w-3/4  justify-between p-2 mt-5 rounded bg-blue-400'>
             <div className='flex'>
                 <div className='text-white font-bold'>{title}</div>
             </div>
@@ -21,7 +21,7 @@ const AccordionLayout = ({ title, children, index, activeIndex, setActiveIndex }
         </div>
 
         {(activeIndex === index) && (
-            <div className=" w-1/2 shadow-3xl rounded-2xl bg-gray-200 shadow-cyan-500/50 p-4 mb-6">
+            <div className="w-3/4   shadow-3xl rounded-2xl bg-gray-200 shadow-cyan-500/50 p-4 mb-6">
               {children}
             </div>
         )}
