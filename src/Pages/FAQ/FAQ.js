@@ -4,9 +4,11 @@ import { useState } from 'react';
 import { BsFillArrowDownCircleFill, BsFillArrowUpCircleFill } from 'react-icons/bs'
 import AccordionLayout from './AccordionLayout/AccordionLayout';
 const FAQ = () => {
-    const [activeIndex, setActiveIndex] = useState(2);
+    const [activeIndex, setActiveIndex] = useState(0);
         return (
             <div className='flex flex-col justify-center items-center'>
+              <h1 className='font-bold my-10 text-3xl text-center '>Frequently Asked Questions</h1>
+              <h3 className='font-semibold text-center text-lg'>Below you’ll find answers to some of the most frequently asked question.</h3>
             <AccordionLayout 
               title="Who can attend programs and activities?"
               index={1}
