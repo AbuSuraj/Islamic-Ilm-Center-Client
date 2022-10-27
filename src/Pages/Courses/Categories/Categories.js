@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Categories = ({course}) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
 const {id, name, image, details, fee, duration} = course
   return (
     <div>
-      <div className="max-w-2xl  mb-4 mx-4">
+      <div data-aos="zoom-in" className="max-w-2xl  mb-4 mx-4">
         <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
            
             <img
