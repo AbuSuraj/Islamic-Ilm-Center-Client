@@ -9,16 +9,7 @@ const CourseDetails = () => {
   const courseDetails = useLoaderData();
   const { id, name, image, details, fee, duration, instructor } = courseDetails;
   console.log(courseDetails);
-//   const createPDF = async () => {
-//     const pdf = new jsPDF("portrait", "pt", "a4"); 
-//   const data = await html2canvas(document.querySelector("#pdf"));
-//   const img = data.toDataURL("image/png");  
-//   const imgProperties = pdf.getImageProperties(img);
-//   const pdfWidth = pdf.internal.pageSize.getWidth();
-//   const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
-//   pdf.addImage(img, "PNG", 0, 0, pdfWidth, pdfHeight);
-//   pdf.save("outline.pdf");
-//   };
+ 
   return (
     <div>
       
@@ -38,29 +29,18 @@ const CourseDetails = () => {
             <div className="w-full md:w-1/2 px-10">
               <div className="mb-10">
                 <div className="flex justify-between items-center">
-                  <h1 className="font-bold uppercase text-3xl mb-5">{name}</h1>
+                  <h1 className="font-bold uppercase text-xl md:text-3xl mb-5">{name}</h1>
 
                   <PDFDownloadLink  document={<PDFFile courseDetails ={courseDetails} />} filename="FORM">
       {({loading}) => (loading ? <button>Loading Document...</button> : <button  className=" bg-blue-700 opacity-75 hover:opacity-100 text-white hover:text-gray-900 rounded-full px-10 py-2 font-semibold">Download
                     </button> )}
       </PDFDownloadLink>
-                  {/* <button  className=" bg-blue-700 opacity-75 hover:opacity-100 text-white hover:text-gray-900 rounded-full px-10 py-2 font-semibold">Outline
-                    </button> */}
-                  <div>
-                    <div>
-                    
-                      {/* <button
-                        onClick={createPDF}
-                        className=" bg-blue-700 opacity-75 hover:opacity-100 text-white hover:text-gray-900 rounded-full px-10 py-2 font-semibold"
-                      >
-                        Outline
-                      </button> */}
-                    </div>
-                  </div>
+                  
+                   
                 </div>
                 <h1 className="font-bold  mb-5">
-                  <span className="font-serif text-2xl ">Instructor: </span>
-                  <span className="font-serif text-xl italic ">
+                  <span className="font-serif text-lg md:text-2xl ">Instructor: </span>
+                  <span className="font-serif text-lg md:text-xl italic ">
                     {instructor}{" "}
                   </span>
                 </h1>

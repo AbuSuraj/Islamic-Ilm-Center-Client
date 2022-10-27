@@ -48,6 +48,7 @@ const Login = () => {
     // Google Signin
     const handleGoogleSignin = () => {
       signInWithGoogle().then((result) => {
+        toast.success("Login Success!");
         console.log(result.user);
         navigate(from, { replace: true });
       });
@@ -57,6 +58,7 @@ const Login = () => {
     const handleGithubSignin = () =>{
         signInWithGithub()
         .then(result =>{
+          toast.success("Login Success!");
             console.log(result.user)
         navigate(from, { replace: true })
         })

@@ -25,6 +25,7 @@ const Register = () => {
     
         createUser(email, password)
           .then((result) => {
+            toast.success("User created Successfully!");
             const user = result.user;
             console.log(user);
             setError("");
@@ -64,6 +65,7 @@ const Register = () => {
     const handleGoogleSignin = () => {
         signInWithGoogle().then(result => {
           console.log(result.user)
+          toast.success("User created Successfully with Google!");
           navigate(from, { replace: true })
         })
       }
@@ -72,6 +74,7 @@ const Register = () => {
       const handleGithubSignin = () =>{
           signInWithGithub()
           .then(result =>{
+            toast.success("User created Successfully with Github!");
               console.log(result.user)
           navigate(from, { replace: true })
           })
