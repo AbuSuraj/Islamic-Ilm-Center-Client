@@ -29,6 +29,7 @@ const Register = () => {
             console.log(user);
             setError("");
             form.reset();
+            navigate(from, { replace: true })
             handleUpdateUserProfile(name, photoURL);
             handleEmailVerification();
             

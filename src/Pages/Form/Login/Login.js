@@ -27,13 +27,13 @@ const Login = () => {
             const user = result.user;
             form.reset();
             setError("");
-            if(user.emailVerified){
+            // if(user.emailVerified){
             toast.success("Login Success!");
             navigate(from,{replace:true});
-           }
-           else{
-            toast.error("Please Verify your email")
-           }
+          //  }
+          //  else{
+          //   toast.error("Please Verify your email")
+          //  }
           // console.log("logged in", result.user);
         })
         .catch((error) => {

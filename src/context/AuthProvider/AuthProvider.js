@@ -65,21 +65,23 @@ const AuthProvider = ({children}) =>{
     }
   
     useEffect(() => {
-      //this part will execute once the component is mounted.
+      
       const unsubscribe = onAuthStateChanged(auth, currentUser => {
-        if(currentUser === null || currentUser.emailVerified){
-            setUser(currentUser);}
+        // if(currentUser === null || currentUser.emailVerified){
+            setUser(currentUser);
+          // }
         setLoading(false)
       })
   
       return () => {
-        //this part will execute once the component is unmounted.
+         
         unsubscribe()
       }
     }, [])
   
     const authInfo = {
       user,
+      setUser,
       createUser,
       updateName,
       verifyEmail,
